@@ -142,6 +142,40 @@
       text-align: center;
       padding: 40px 0;
     }
+
+    .answer-input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 18px;
+      font-family: inherit;
+    }
+
+    .answer-input:focus {
+      outline: 2px solid #333;
+      outline-offset: 2px;
+    }
+
+    .answer-input.correct {
+      background: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+    }
+
+    .answer-input.incorrect {
+      background: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+    }
+
+    .input-hint {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+    
   </style>
 </head>
 <body>
@@ -177,169 +211,343 @@
   <script src="questions.js"></script>
 
   <!-- APP ENGINE LOGIC -->
-  <script>
-    const QUESTIONS_PER_BATCH = 10;
-    let currentTopic = '';
-    let activeQuestions = [];
-    let shuffledDefinitions = [];
-    let nextDefinitionIndex = 0;
-    let questionOffset = 0;
-    let currentIndex = 0;
-    let score = 0;
-    let answeredCount = 0;
-    let optionSelected = false;
+  <!-- APP ENGINE LOGIC -->
+<script>
+  const QUESTIONS_PER_BATCH = 10;
 
-    function populateTopicDropdown() {
-      const select = document.getElementById('topic-select');
-      select.innerHTML = '';
-      const topics = Object.keys(topicDefinitions);
-      
-      if (topics.length === 0) return;
-      currentTopic = topics[0];
+  let currentTopic = '';
+  let activeQuestions = [];
+  let shuffledDefinitions = [];
+  let nextDefinitionIndex = 0;
+  let questionOffset = 0;
+  let currentIndex = 0;
+  let score = 0;
+  let answeredCount = 0;
+  let optionSelected = false;
 
-      topics.forEach(topic => {
-        const option = document.createElement('option');
-        option.value = topic;
-        option.textContent = topic;
-        select.appendChild(option);
+  function typesetMath() {
+    if (window.MathJax && window.MathJax.typesetPromise) {
+      window.MathJax.typesetPromise().catch(console.error);
+    }
+  }
+
+  function populateTopicDropdown() {
+    const select = document.getElementById('topic-select');
+    select.innerHTML = '';
+
+    const topics = Object.keys(topicDefinitions);
+    if (topics.length === 0) return;
+
+    currentTopic = topics[0];
+
+    topics.forEach(topic => {
+      const option = document.createElement('option');
+      option.value = topic;
+      option.textContent = topic;
+      select.appendChild(option);
+    });
+  }
+
+  function switchTopic(newTopic) {
+    currentTopic = newTopic;
+    resetQuiz();
+  }
+
+  function loadQuestionsForTopic() {
+    shuffledDefinitions = shuffleArray(
+      topicDefinitions[currentTopic] || []
+    );
+
+    nextDefinitionIndex = 0;
+    loadNextBatch();
+  }
+
+  function loadNextBatch() {
+    questionOffset = nextDefinitionIndex;
+
+    const batch = shuffledDefinitions.slice(
+      nextDefinitionIndex,
+      nextDefinitionIndex + QUESTIONS_PER_BATCH
+    );
+
+    nextDefinitionIndex += batch.length;
+
+    activeQuestions = batch.map(item =>
+      typeof item === 'function' ? item() : item
+    );
+  }
+
+  function renderQuestion() {
+    const q = activeQuestions[currentIndex];
+    if (!q) return;
+
+    document.getElementById('progress').textContent =
+      `Question ${questionOffset + currentIndex + 1} of ${shuffledDefinitions.length}`;
+
+    document.getElementById('score').textContent =
+      `Score: ${score}/${answeredCount}`;
+
+    document.getElementById('question').innerHTML = q.question;
+
+    const feedbackEl = document.getElementById('feedback');
+    feedbackEl.className = 'feedback';
+    feedbackEl.style.display = 'none';
+    feedbackEl.innerHTML = '';
+
+    document.getElementById('next-btn').disabled = true;
+    optionSelected = false;
+
+    const optionsContainer = document.getElementById('options');
+    optionsContainer.innerHTML = '';
+
+    if (q.type === 'text') {
+      const form = document.createElement('form');
+      form.className = 'options';
+
+      const input = document.createElement('input');
+      input.id = 'typed-answer';
+      input.className = 'answer-input';
+      input.type = 'text';
+      input.placeholder = q.placeholder || 'Enter your answer';
+      input.autocomplete = 'off';
+      input.spellcheck = false;
+      input.setAttribute('autocapitalize', 'none');
+      input.setAttribute('aria-label', 'Your answer');
+      input.required = true;
+
+      const hint = document.createElement('p');
+      hint.className = 'input-hint';
+      hint.textContent = q.hint ||
+        'Enter three letters using u, d, and s. Order does not matter.';
+
+      const submitButton = document.createElement('button');
+      submitButton.id = 'submit-answer';
+      submitButton.className = 'btn';
+      submitButton.type = 'submit';
+      submitButton.textContent = 'Check Answer';
+
+      form.append(input, hint, submitButton);
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        submitTypedAnswer();
       });
-    }
 
-    function switchTopic(newTopic) {
-      currentTopic = newTopic;
-      resetQuiz();
-    }
-
-    function loadQuestionsForTopic() {
-      shuffledDefinitions = shuffleArray(topicDefinitions[currentTopic] || []);
-      nextDefinitionIndex = 0;
-      loadNextBatch();
-    }
-
-    function loadNextBatch() {
-      questionOffset = nextDefinitionIndex;
-      const batch = shuffledDefinitions.slice(
-        nextDefinitionIndex,
-        nextDefinitionIndex + QUESTIONS_PER_BATCH
-      );
-      nextDefinitionIndex += batch.length;
-      activeQuestions = batch.map(item => typeof item === 'function' ? item() : item);
-    }
-
-    function renderQuestion() {
-      const q = activeQuestions[currentIndex];
-      if (!q) return;
-
-      document.getElementById('progress').innerText = `Question ${questionOffset + currentIndex + 1} of ${shuffledDefinitions.length}`;
-      document.getElementById('score').innerText = `Score: ${score}/${answeredCount}`;
-      document.getElementById('question').innerHTML = q.question;
-
-      const feedbackEl = document.getElementById('feedback');
-      feedbackEl.className = 'feedback';
-      feedbackEl.style.display = 'none';
-      document.getElementById('next-btn').disabled = true;
-      optionSelected = false;
-
-      const optionsContainer = document.getElementById('options');
-      optionsContainer.innerHTML = '';
-
+      optionsContainer.appendChild(form);
+      input.focus();
+    } else {
       q.options.forEach((optText, index) => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerHTML = `${String.fromCharCode(65 + index)}. ${optText}`;
-        btn.onclick = () => selectOption(index);
-        optionsContainer.appendChild(btn);
+        const button = document.createElement('button');
+        button.className = 'option-btn';
+        button.innerHTML =
+          `${String.fromCharCode(65 + index)}. ${optText}`;
+
+        button.onclick = () => selectOption(index);
+        optionsContainer.appendChild(button);
       });
-
-      if (window.MathJax && window.MathJax.typesetPromise) {
-        MathJax.typesetPromise();
-      }
     }
 
-    function selectOption(selectedIndex) {
-      if (optionSelected) return;
-      optionSelected = true;
+    typesetMath();
+  }
 
-      const q = activeQuestions[currentIndex];
-      const isCorrect = selectedIndex === q.answer;
+  function checkQuarkAnswer(userAnswer, correctAnswer) {
+    const normalize = value =>
+      value.toLowerCase().replace(/\s+/g, '');
 
-      answeredCount++;
-      if (isCorrect) score++;
+    const entered = normalize(userAnswer);
+    const expected = normalize(correctAnswer);
 
-      document.getElementById('score').innerText = `Score: ${score}/${answeredCount}`;
+    if (!/^[uds]{3}$/.test(entered)) return false;
 
-      const buttons = document.querySelectorAll('.option-btn');
-      buttons.forEach((btn, idx) => {
-        btn.disabled = true;
-        if (idx === q.answer) {
-          btn.classList.add('correct');
-        } else if (idx === selectedIndex) {
-          btn.classList.add('incorrect');
-        }
-      });
+    const sortLetters = value =>
+      value.split('').sort().join('');
 
-      const feedbackEl = document.getElementById('feedback');
-      feedbackEl.style.display = 'block';
-      if (isCorrect) {
-        feedbackEl.className = 'feedback show correct-bg';
-        feedbackEl.innerHTML = `<strong>Correct!</strong> ${q.explanation || ''}`;
-      } else {
-        feedbackEl.className = 'feedback show incorrect-bg';
-        feedbackEl.innerHTML = `<strong>Incorrect.</strong> ${q.explanation || ''}`;
-      }
+    return sortLetters(entered) === sortLetters(expected);
+  }
 
-      document.getElementById('next-btn').disabled = false;
+  function finishAnswer(isCorrect, explanation) {
+    optionSelected = true;
+    answeredCount++;
 
-      if (window.MathJax && window.MathJax.typesetPromise) {
-        MathJax.typesetPromise();
-      }
-    }
+    if (isCorrect) score++;
 
-    function nextQuestion() {
-      currentIndex++;
-      if (currentIndex < activeQuestions.length) {
-        renderQuestion();
-      } else if (nextDefinitionIndex < shuffledDefinitions.length) {
-        loadNextBatch();
-        currentIndex = 0;
-        renderQuestion();
-      } else {
-        showCompletionScreen();
-      }
-    }
+    document.getElementById('score').textContent =
+      `Score: ${score}/${answeredCount}`;
 
-    function showCompletionScreen() {
-      document.getElementById('quiz-container').style.display = 'none';
-      const completedContainer = document.getElementById('completed-container');
-      completedContainer.style.display = 'block';
+    const feedbackEl = document.getElementById('feedback');
 
-      const pct = Math.round((score / answeredCount) * 100);
-      document.getElementById('final-score').innerHTML = `You scored <strong>${score} / ${answeredCount}</strong> (${pct}%) in <em>${currentTopic}</em>.`;
-    }
+    feedbackEl.style.display = 'block';
+    feedbackEl.className = isCorrect
+      ? 'feedback show correct-bg'
+      : 'feedback show incorrect-bg';
 
-    function resetQuiz() {
-      currentIndex = 0;
-      score = 0;
-      answeredCount = 0;
-      loadQuestionsForTopic();
-      document.getElementById('quiz-container').style.display = 'block';
-      document.getElementById('completed-container').style.display = 'none';
-      renderQuestion();
-    }
+    feedbackEl.innerHTML =
+      `<strong>${isCorrect ? 'Correct!' : 'Incorrect.'}</strong> ` +
+      (explanation || '');
 
-    document.addEventListener('keydown', (e) => {
-      const key = e.key.toUpperCase();
-      if (['A', 'B', 'C', 'D'].includes(key) && !optionSelected) {
-        const optionIndex = key.charCodeAt(0) - 65;
-        const buttons = document.querySelectorAll('.option-btn');
-        if (buttons[optionIndex]) selectOption(optionIndex);
-      } else if ((e.key === ' ' || e.key === 'Enter') && optionSelected) {
-        nextQuestion();
+    const nextButton = document.getElementById('next-btn');
+    nextButton.disabled = false;
+    nextButton.focus();
+
+    typesetMath();
+  }
+
+  function selectOption(selectedIndex) {
+    const q = activeQuestions[currentIndex];
+
+    if (!q || optionSelected || q.type === 'text') return;
+
+    const isCorrect = selectedIndex === q.answer;
+
+    const buttons = document.querySelectorAll(
+      '#options .option-btn'
+    );
+
+    buttons.forEach((button, index) => {
+      button.disabled = true;
+
+      if (index === q.answer) {
+        button.classList.add('correct');
+      } else if (index === selectedIndex) {
+        button.classList.add('incorrect');
       }
     });
 
-    populateTopicDropdown();
-    resetQuiz();
-  </script>
+    finishAnswer(isCorrect, q.explanation);
+  }
+
+  function submitTypedAnswer() {
+    const q = activeQuestions[currentIndex];
+
+    if (!q || optionSelected || q.type !== 'text') return;
+
+    const input = document.getElementById('typed-answer');
+
+    if (!input.value.trim()) {
+      input.focus();
+      return;
+    }
+
+    const isCorrect = checkQuarkAnswer(
+      input.value,
+      q.correctAnswer
+    );
+
+    input.disabled = true;
+    input.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+    document.getElementById('submit-answer').disabled = true;
+
+    finishAnswer(
+      isCorrect,
+      q.explanation ||
+        `The correct composition is $${q.correctAnswer}$.`
+    );
+  }
+
+  function nextQuestion() {
+    if (!optionSelected) return;
+
+    currentIndex++;
+
+    if (currentIndex < activeQuestions.length) {
+      renderQuestion();
+    } else if (nextDefinitionIndex < shuffledDefinitions.length) {
+      loadNextBatch();
+      currentIndex = 0;
+      renderQuestion();
+    } else {
+      showCompletionScreen();
+    }
+  }
+
+  function showCompletionScreen() {
+    document.getElementById('quiz-container').style.display =
+      'none';
+
+    document.getElementById('completed-container').style.display =
+      'block';
+
+    const percentage = answeredCount
+      ? Math.round((score / answeredCount) * 100)
+      : 0;
+
+    document.getElementById('final-score').textContent =
+      `You scored ${score} / ${answeredCount} (${percentage}%) in ${currentTopic}.`;
+  }
+
+  function resetQuiz() {
+    currentIndex = 0;
+    score = 0;
+    answeredCount = 0;
+    optionSelected = false;
+
+    loadQuestionsForTopic();
+
+    document.getElementById('quiz-container').style.display =
+      'block';
+
+    document.getElementById('completed-container').style.display =
+      'none';
+
+    if (activeQuestions.length === 0) {
+      showCompletionScreen();
+      return;
+    }
+
+    renderQuestion();
+  }
+
+  document.addEventListener('keydown', event => {
+    if (event.repeat || event.isComposing) return;
+
+    const quizVisible =
+      document.getElementById('quiz-container').style.display !==
+      'none';
+
+    if (!quizVisible) return;
+
+    const target = event.target;
+
+    if (
+      target instanceof Element &&
+      target.closest(
+        'input, textarea, select, button, [contenteditable="true"]'
+      )
+    ) {
+      return;
+    }
+
+    const q = activeQuestions[currentIndex];
+    if (!q) return;
+
+    const key = event.key.toUpperCase();
+
+    if (
+      q.type !== 'text' &&
+      !optionSelected &&
+      ['A', 'B', 'C', 'D'].includes(key)
+    ) {
+      const optionIndex = key.charCodeAt(0) - 65;
+      const buttons = document.querySelectorAll(
+        '#options .option-btn'
+      );
+
+      if (buttons[optionIndex]) {
+        event.preventDefault();
+        selectOption(optionIndex);
+      }
+    } else if (
+      optionSelected &&
+      (event.key === ' ' || event.key === 'Enter')
+    ) {
+      event.preventDefault();
+      nextQuestion();
+    }
+  });
+
+  populateTopicDropdown();
+  resetQuiz();
+</script>
 </body>
 </html>
