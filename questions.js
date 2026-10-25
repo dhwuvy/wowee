@@ -31,7 +31,227 @@ function makeQuestion(questionText, correctAnswer, wrongAnswers, explanationText
 // AND choice orders (A, B, C, D) are freshly shuffled on every restart.
 // =========================================================
 const topicDefinitions = {
-  "SI Units": [
+"Nitrogen Cycle": [
+    () => makeQuestion(
+      "Approximately what percentage of Earth's atmosphere is nitrogen gas?",
+      "78%",
+      ["21%", "50%", "95%"],
+      "Nitrogen gas makes up approximately 78% of Earth's atmosphere."
+    ),
+
+    () => makeQuestion(
+      "Why can most organisms not directly use atmospheric nitrogen gas?",
+      "The triple bond in N2 is very difficult to break.",
+      [
+        "Nitrogen gas is too heavy to enter cells.",
+        "Nitrogen gas is poisonous to all plants.",
+        "Nitrogen gas dissolves too quickly in water."
+      ],
+      "Atmospheric N2 has a very strong triple bond, making it difficult for most organisms to break and use directly."
+    ),
+
+    () => makeQuestion(
+      "What is the process that converts nitrogen gas into ammonia called?",
+      "Nitrogen fixation",
+      ["Nitrification", "Ammonification", "Denitrification"],
+      "Nitrogen fixation converts atmospheric nitrogen gas into ammonia."
+    ),
+
+    () => makeQuestion(
+      "Which organisms carry out nitrogen fixation?",
+      "Nitrogen-fixing bacteria",
+      [
+        "Only animals",
+        "Only flowering plants",
+        "Only decomposers such as fungi"
+      ],
+      "Nitrogen-fixing bacteria convert atmospheric N2 into ammonia."
+    ),
+
+    () => makeQuestion(
+      "What is the correct chemical change represented by nitrogen fixation?",
+      "N2 → NH3",
+      ["NH3 → N2", "NH4+ → NO3-", "NO3- → N2"],
+      "Nitrogen fixation converts nitrogen gas into ammonia: N2 → NH3."
+    ),
+
+    () => makeQuestion(
+      "What is assimilation in the nitrogen cycle?",
+      "The uptake and use of nitrogen compounds by plants",
+      [
+        "The conversion of nitrate back into nitrogen gas",
+        "The breakdown of dead organisms into ammonium",
+        "The oxidation of ammonium into nitrate"
+      ],
+      "Assimilation occurs when plants absorb nitrogen compounds, such as ammonia or nitrate, and incorporate them into biological molecules."
+    ),
+
+    () => makeQuestion(
+      "Which form of nitrogen can plants take up during assimilation after nitrogen fixation?",
+      "Ammonia",
+      [
+        "Nitrogen gas",
+        "Atmospheric oxygen",
+        "Solid carbon"
+      ],
+      "Ammonia produced by nitrogen-fixing bacteria can be taken up by plants during assimilation."
+    ),
+
+    () => makeQuestion(
+      "What occurs during nitrification?",
+      "Ammonium is oxidized into nitrate.",
+      [
+        "Nitrogen gas is converted into ammonia.",
+        "Nitrate is converted back into nitrogen gas.",
+        "Dead organisms are broken down into ammonium."
+      ],
+      "Nitrification is the bacterial oxidation of ammonium into nitrate."
+    ),
+
+    () => makeQuestion(
+      "Which nitrogen compound is produced by nitrification and used by plants in assimilation?",
+      "Nitrate",
+      ["Nitrogen gas", "Ammonia", "Protein"],
+      "Nitrification produces nitrate, which plants can absorb and assimilate."
+    ),
+
+    () => makeQuestion(
+      "How does nitrogen move from plants to animals?",
+      "Animals obtain nitrogen by eating plants or other animals.",
+      [
+        "Animals absorb nitrogen directly from the atmosphere.",
+        "Animals fix nitrogen gas into ammonia.",
+        "Animals convert nitrate into nitrogen gas."
+      ],
+      "Plants incorporate nitrogen into their tissues, and animals obtain that nitrogen by eating plants or other animals."
+    ),
+
+    () => makeQuestion(
+      "What happens to nitrogen in an animal's body after it dies?",
+      "Decomposers return it to the soil through ammonification.",
+      [
+        "It immediately becomes atmospheric nitrogen gas.",
+        "It is converted directly into nitrate by plants.",
+        "It remains locked in the animal's body forever."
+      ],
+      "When an organism dies, decomposers break down its nitrogen-containing compounds and return nitrogen to the soil through ammonification."
+    ),
+
+    () => makeQuestion(
+      "What is ammonification?",
+      "The conversion of organic nitrogen from dead organisms into ammonium or ammonia.",
+      [
+        "The conversion of nitrogen gas into ammonia",
+        "The conversion of ammonium into nitrate",
+        "The conversion of nitrate into nitrogen gas"
+      ],
+      "Ammonification is the decomposition process that converts organic nitrogen from dead organisms and waste into ammonium or ammonia."
+    ),
+
+    () => makeQuestion(
+      "What occurs during denitrification?",
+      "Bacteria convert nitrates into nitrogen gas.",
+      [
+        "Bacteria convert nitrogen gas into ammonia.",
+        "Bacteria convert ammonium into nitrate.",
+        "Plants absorb nitrate from the soil."
+      ],
+      "Denitrifying bacteria convert nitrates back into nitrogen gas, returning it to the atmosphere."
+    ),
+
+    () => makeQuestion(
+      "Which chemical change represents denitrification?",
+      "NO3- → N2",
+      ["N2 → NH3", "NH4+ → NO3-", "NH3 → NH4+"],
+      "Denitrification converts nitrate into nitrogen gas: NO3- → N2."
+    ),
+
+    () => makeQuestion(
+      "Why can denitrification reduce soil fertility?",
+      "It removes usable nitrate from the soil.",
+      [
+        "It adds excess ammonia to the soil.",
+        "It increases the amount of nitrate available to plants.",
+        "It creates more nitrogen-fixing bacteria."
+      ],
+      "Denitrification converts nitrate, a form plants can use, back into nitrogen gas, reducing the nitrogen available in the soil."
+    ),
+
+    () => makeQuestion(
+      "Which sequence correctly shows part of the nitrogen cycle?",
+      "Nitrogen fixation → assimilation → ammonification → nitrification → denitrification",
+      [
+        "Nitrogen fixation → denitrification → assimilation → ammonification",
+        "Ammonification → nitrogen fixation → denitrification → assimilation",
+        "Denitrification → nitrification → nitrogen fixation → ammonification"
+      ],
+      "A major pathway moves from nitrogen fixation to assimilation, then through ammonification and nitrification, and finally denitrification returns nitrogen gas to the atmosphere."
+    ),
+
+    () => makeQuestion(
+      "Which process returns nitrogen from the soil to the atmosphere?",
+      "Denitrification",
+      ["Nitrogen fixation", "Nitrification", "Assimilation"],
+      "Denitrification converts soil nitrate into atmospheric nitrogen gas."
+    ),
+
+    () => makeQuestion(
+      "Which process adds newly usable nitrogen to the soil from the atmosphere?",
+      "Nitrogen fixation",
+      ["Denitrification", "Ammonification", "Nitrification"],
+      "Nitrogen fixation converts atmospheric nitrogen gas into ammonia, making nitrogen available to organisms."
+    ),
+
+    () => makeQuestion(
+      "Which process converts ammonium into nitrate?",
+      "Nitrification",
+      ["Nitrogen fixation", "Denitrification", "Ammonification"],
+      "Nitrification oxidizes ammonium into nitrate."
+    ),
+
+    () => makeQuestion(
+      "Which process breaks down dead organisms and returns nitrogen to the soil?",
+      "Ammonification",
+      ["Nitrogen fixation", "Nitrification", "Denitrification"],
+      "Ammonification decomposes organic nitrogen from dead organisms into ammonium or ammonia in the soil."
+    ),
+
+    () => makeQuestion(
+      "Which form of nitrogen is most directly produced by nitrogen-fixing bacteria?",
+      "Ammonia",
+      ["Nitrate", "Nitrogen gas", "Atmospheric oxygen"],
+      "Nitrogen-fixing bacteria convert nitrogen gas into ammonia."
+    ),
+
+    () => makeQuestion(
+      "Which form of nitrogen is most directly produced by nitrifying bacteria?",
+      "Nitrate",
+      ["Ammonia", "Nitrogen gas", "Organic protein"],
+      "Nitrifying bacteria oxidize ammonium into nitrate."
+    ),
+
+    () => makeQuestion(
+      "Which form of nitrogen is most directly produced by denitrifying bacteria?",
+      "Nitrogen gas",
+      ["Ammonia", "Nitrate", "Ammonium"],
+      "Denitrifying bacteria convert nitrate into nitrogen gas."
+    ),
+
+    () => makeQuestion(
+      "Which process would most likely decrease the amount of nitrate available to plants?",
+      "Denitrification",
+      ["Nitrogen fixation", "Nitrification", "Assimilation"],
+      "Denitrification converts nitrate into nitrogen gas, reducing nitrate availability in the soil."
+    ),
+
+    () => makeQuestion(
+      "Which process would most likely increase the amount of nitrate available to plants?",
+      "Nitrification",
+      ["Denitrification", "Nitrogen fixation", "Ammonification"],
+      "Nitrification converts ammonium into nitrate, a form plants can assimilate."
+    )
+],
+"SI Units": [
   // Dynamic SI Unit Problem
   () => {
     const constants = [
@@ -852,6 +1072,259 @@ const topicDefinitions = {
     ],
     "Heisenberg led Nazi Germany’s atomic bomb development effort, which failed."
   )
+],
+"Nuclear Physics": [
+  // Nuclear structure
+  () => makeQuestion(
+    "Which force holds protons and neutrons together in an atomic nucleus?",
+    "The strong nuclear force",
+    [
+      "The gravitational force",
+      "The electromagnetic force",
+      "The weak nuclear force"
+    ],
+    "The strong nuclear force holds protons and neutrons together in the nucleus."
+  ),
+
+  () => makeQuestion(
+    "In nuclear notation ${}^{A}_{Z}X$, what do $A$ and $Z$ represent?",
+    "$A$: protons plus neutrons; $Z$: protons",
+    [
+      "$A$: protons; $Z$: neutrons",
+      "$A$: neutrons; $Z$: protons plus neutrons",
+      "$A$: electrons; $Z$: neutrons"
+    ],
+    "$A$ is the mass number, and $Z$ is the atomic number. The neutron number is $A-Z$."
+  ),
+
+  // Alpha decay
+  () => makeQuestion(
+    "What is an alpha particle?",
+    "A helium-4 nucleus containing two protons and two neutrons",
+    [
+      "An electron emitted from a nucleus",
+      "A positron emitted from a nucleus",
+      "A photon emitted by an excited nucleus"
+    ],
+    "An alpha particle is written as ${}^{4}_{2}\\mathrm{He}$ and contains two protons and two neutrons."
+  ),
+
+  () => makeQuestion(
+    "Which equation correctly represents alpha decay?",
+    "${}^{A}_{Z}X \\rightarrow {}^{A-4}_{Z-2}Y + {}^{4}_{2}\\mathrm{He}$",
+    [
+      "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z+1}Y + {}^{0}_{-1}e + \\bar{\\nu}_e$",
+      "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z-1}Y + {}^{0}_{+1}e + \\nu_e$",
+      "${}^{A}_{Z}X^{*} \\rightarrow {}^{A}_{Z}X + {}^{0}_{0}\\gamma$"
+    ],
+    "Alpha decay removes two protons and two neutrons, so $A$ decreases by $4$ and $Z$ decreases by $2$."
+  ),
+
+  () => makeQuestion(
+    "A nucleus with $A=238$ and $Z=92$ undergoes alpha decay. What are the daughter's values?",
+    "$A=234,\\ Z=90$",
+    [
+      "$A=238,\\ Z=93$",
+      "$A=234,\\ Z=94$",
+      "$A=236,\\ Z=90$"
+    ],
+    "Alpha decay gives $A'=238-4=234$ and $Z'=92-2=90$."
+  ),
+
+  // Beta-minus decay
+  () => makeQuestion(
+    "What happens during beta-minus decay?",
+    "A neutron becomes a proton, emitting an electron and an electron antineutrino.",
+    [
+      "A proton becomes a neutron, emitting a positron and an electron neutrino.",
+      "The nucleus ejects two protons and two neutrons.",
+      "An excited nucleus emits only a gamma-ray photon."
+    ],
+    "Beta-minus decay converts a neutron into a proton and emits $e^-$ and $\\bar{\\nu}_e$."
+  ),
+
+  () => makeQuestion(
+    "Which equation correctly represents beta-minus decay?",
+    "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z+1}Y + {}^{0}_{-1}e + \\bar{\\nu}_e$",
+    [
+      "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z-1}Y + {}^{0}_{+1}e + \\nu_e$",
+      "${}^{A}_{Z}X \\rightarrow {}^{A-4}_{Z-2}Y + {}^{4}_{2}\\mathrm{He}$",
+      "${}^{A}_{Z}X^{*} \\rightarrow {}^{A}_{Z}X + {}^{0}_{0}\\gamma$"
+    ],
+    "Beta-minus decay leaves $A$ unchanged and increases $Z$ by $1$."
+  ),
+
+  () => makeQuestion(
+    "A nucleus with $A=14$ and $Z=6$ undergoes beta-minus decay. What are the daughter's values?",
+    "$A=14,\\ Z=7$",
+    [
+      "$A=14,\\ Z=5$",
+      "$A=10,\\ Z=4$",
+      "$A=13,\\ Z=7$"
+    ],
+    "One neutron becomes a proton, so $A$ remains $14$ and $Z$ increases to $7$."
+  ),
+
+  // Beta-plus decay
+  () => makeQuestion(
+    "What happens during beta-plus decay?",
+    "A proton becomes a neutron, emitting a positron and an electron neutrino.",
+    [
+      "A neutron becomes a proton, emitting an electron and an electron antineutrino.",
+      "The nucleus ejects a helium-4 nucleus.",
+      "An excited nucleus emits only a gamma-ray photon."
+    ],
+    "Beta-plus decay converts a proton into a neutron and emits $e^+$ and $\\nu_e$."
+  ),
+
+  () => makeQuestion(
+    "Which equation correctly represents beta-plus decay?",
+    "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z-1}Y + {}^{0}_{+1}e + \\nu_e$",
+    [
+      "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z+1}Y + {}^{0}_{-1}e + \\bar{\\nu}_e$",
+      "${}^{A}_{Z}X \\rightarrow {}^{A-4}_{Z-2}Y + {}^{4}_{2}\\mathrm{He}$",
+      "${}^{A}_{Z}X^{*} \\rightarrow {}^{A}_{Z}X + {}^{0}_{0}\\gamma$"
+    ],
+    "Beta-plus decay leaves $A$ unchanged and decreases $Z$ by $1$."
+  ),
+
+  () => makeQuestion(
+    "A nucleus with $A=22$ and $Z=11$ undergoes beta-plus decay. What are the daughter's values?",
+    "$A=22,\\ Z=10$",
+    [
+      "$A=22,\\ Z=12$",
+      "$A=18,\\ Z=9$",
+      "$A=21,\\ Z=10$"
+    ],
+    "One proton becomes a neutron, so $A$ remains $22$ and $Z$ decreases to $10$."
+  ),
+
+  // Gamma decay
+  () => makeQuestion(
+    "Which equation correctly represents gamma decay?",
+    "${}^{A}_{Z}X^{*} \\rightarrow {}^{A}_{Z}X + {}^{0}_{0}\\gamma$",
+    [
+      "${}^{A}_{Z}X \\rightarrow {}^{A-4}_{Z-2}Y + {}^{4}_{2}\\mathrm{He}$",
+      "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z+1}Y + {}^{0}_{-1}e + \\bar{\\nu}_e$",
+      "${}^{A}_{Z}X \\rightarrow {}^{A}_{Z-1}Y + {}^{0}_{+1}e + \\nu_e$"
+    ],
+    "An excited nucleus releases a gamma-ray photon without changing $A$ or $Z$."
+  ),
+
+  () => makeQuestion(
+    "What does the asterisk in ${}^{A}_{Z}X^{*}$ indicate?",
+    "The nucleus is in an excited energy state.",
+    [
+      "The nucleus contains no neutrons.",
+      "The nucleus has a negative atomic number.",
+      "The nucleus is an alpha particle."
+    ],
+    "The asterisk identifies an excited nucleus. Gamma emission allows it to transition to a lower-energy state."
+  ),
+
+  () => makeQuestion(
+    "Which listed decay leaves both the mass number and atomic number unchanged?",
+    "Gamma decay",
+    [
+      "Alpha decay",
+      "Beta-minus decay",
+      "Beta-plus decay"
+    ],
+    "Gamma decay releases energy without changing the number of protons or neutrons."
+  ),
+
+  // Comparing decay types
+  () => makeQuestion(
+    "Why do beta-minus and beta-plus decay leave the mass number unchanged?",
+    "One nucleon changes type, but the total number of nucleons stays the same.",
+    [
+      "Both processes remove two protons and two neutrons.",
+      "The emitted particle replaces a lost nucleon.",
+      "Neither process changes a proton or neutron."
+    ],
+    "Beta-minus converts a neutron into a proton; beta-plus converts a proton into a neutron. The total nucleon count remains unchanged."
+  ),
+
+  () => makeQuestion(
+    "Which pairing of decay type and emitted particles is correct?",
+    "Beta-minus: electron and electron antineutrino",
+    [
+      "Beta-minus: positron and electron neutrino",
+      "Beta-plus: electron and electron antineutrino",
+      "Alpha: electron and positron"
+    ],
+    "Beta-minus emits $e^-$ and $\\bar{\\nu}_e$, while beta-plus emits $e^+$ and $\\nu_e$."
+  ),
+
+  // Baryon fundamentals
+  () => makeQuestion(
+    "What are baryons typically made of?",
+    "Three quarks",
+    [
+      "Three electrons",
+      "Two photons",
+      "An electron and a positron"
+    ],
+    "The baryons in this topic each have three valence quarks."
+  ),
+
+  // Typed-answer baryon questions
+  ...[
+    {
+      name: "Proton",
+      symbol: "$p^{+}$",
+      composition: "uud"
+    },
+    {
+      name: "Neutron",
+      symbol: "$n^{0}$",
+      composition: "udd"
+    },
+    {
+      name: "Delta minus",
+      symbol: "$\\Delta^{-}$",
+      composition: "ddd"
+    },
+    {
+      name: "Delta double-plus",
+      symbol: "$\\Delta^{++}$",
+      composition: "uuu"
+    },
+    {
+      name: "Omega minus",
+      symbol: "$\\Omega^{-}$",
+      composition: "sss"
+    },
+    {
+      name: "Lambda",
+      symbol: "$\\Lambda^{0}$",
+      composition: "uds"
+    },
+    {
+      name: "Sigma plus",
+      symbol: "$\\Sigma^{+}$",
+      composition: "uus"
+    },
+    {
+      name: "Sigma zero",
+      symbol: "$\\Sigma^{0}$",
+      composition: "uds"
+    },
+    {
+      name: "Sigma minus",
+      symbol: "$\\Sigma^{-}$",
+      composition: "dds"
+    }
+  ].map(({ name, symbol, composition }) => () => ({
+    type: "text",
+    question:
+      `${name} (${symbol}): Enter its three-letter quark composition.`,
+    correctAnswer: composition,
+    placeholder: "Enter quark composition",
+    hint: "Use u, d, and s. Order does not matter.",
+    explanation:
+      `${name} (${symbol}) has quark composition $${composition}$.`
+  }))
 ],
 "Galaxies": [
     () => makeQuestion(
