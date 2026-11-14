@@ -1073,6 +1073,293 @@ const topicDefinitions = {
     "Heisenberg led Nazi Germany’s atomic bomb development effort, which failed."
   )
 ],
+"Chapter 4: Dawn of Quantum Computers": [
+  () => makeQuestion(
+    "Who created the transistor?",
+    "John Bardeen, Walter Brattain, and William Shockley",
+    [
+      "Albert Einstein, Max Planck, and Niels Bohr",
+      "Richard Feynman, David Deutsch, and Peter Shor",
+      "Andre Geim, Konstantin Novoselov, and John Wheeler"
+    ],
+    "John Bardeen, Walter Brattain, and William Shockley created the transistor."
+  ),
+
+  () => makeQuestion(
+    "What type of material does a transistor use to control the flow of electrons?",
+    "A semiconductor",
+    [
+      "A superconductor",
+      "A permanent magnet",
+      "An electrical insulator alone"
+    ],
+    "Transistors use semiconductors, whose electrical properties allow the flow of electrons to be controlled."
+  ),
+
+  () => makeQuestion(
+    "In the simplified fabrication process described, what defines the circuit pattern?",
+    "A template containing an image of the desired circuits",
+    [
+      "A magnetic field surrounding the wafer",
+      "An image taken by an electron microscope",
+      "A laser beam carrying an encryption key"
+    ],
+    "The process begins with a template containing the circuit pattern to be transferred to the wafer."
+  ),
+
+  () => makeQuestion(
+    "What material is the wafer made of in the described transistor fabrication process?",
+    "Silicon",
+    [
+      "Copper",
+      "Graphene",
+      "Steel"
+    ],
+    "The described process uses a silicon wafer as the foundation for the circuits."
+  ),
+
+  () => makeQuestion(
+    "What kind of radiation is used to transfer the template's pattern in the described process?",
+    "Ultraviolet radiation",
+    [
+      "Radio waves",
+      "Infrared radiation",
+      "Microwaves"
+    ],
+    "The described process uses ultraviolet radiation to help transfer the circuit pattern."
+  ),
+
+  () => makeQuestion(
+    "In the simplified fabrication sequence described, what follows ultraviolet exposure and removal of the template?",
+    "An acid treatment",
+    [
+      "Freezing the wafer",
+      "Adding a permanent magnet",
+      "Measuring an entangled qubit"
+    ],
+    "In the simplified sequence, the template is removed and an acid treatment follows."
+  ),
+
+  () => makeQuestion(
+    "What interactions does quantum electrodynamics describe?",
+    "Interactions between light and electrically charged particles",
+    [
+      "Interactions between planets and their moons",
+      "Interactions between sound waves and ocean currents",
+      "Interactions between gravity and spacetime alone"
+    ],
+    "Richard Feynman helped develop quantum electrodynamics, which describes interactions involving light and charged particles, including electrons and photons."
+  ),
+
+  () => makeQuestion(
+    "How much money did Feynman offer for each of his two miniaturization challenges?",
+    "$1,000",
+    [
+      "$100",
+      "$10,000",
+      "$1,000,000"
+    ],
+    "Feynman offered two prizes of $1,000 each for completing his miniaturization challenges."
+  ),
+
+  () => makeQuestion(
+    "What was Feynman's book-page miniaturization challenge?",
+    "Shrink a page so that it could only be read using an electron microscope",
+    [
+      "Print a book using only a single letter",
+      "Make a page visible from the Moon",
+      "Store a page inside a laser without encoding it"
+    ],
+    "One challenge was to miniaturize a page of text so dramatically that reading it would require an electron microscope."
+  ),
+
+  () => makeQuestion(
+    "What was Feynman's miniature electric motor challenge?",
+    "Build an electric motor that fits inside a cube measuring 1/64 inch on each side",
+    [
+      "Build an electric motor with no moving parts",
+      "Build an electric motor the size of a car",
+      "Build an electric motor powered only by gravity"
+    ],
+    "Feynman challenged people to build a working electric motor small enough to fit inside a cube measuring 1/64 inch on each side."
+  ),
+
+  () => makeQuestion(
+    "What does the principle of least action say about a physical system's actual path?",
+    "Small changes to the path produce no first-order change in its action",
+    [
+      "It must always be the shortest path through space",
+      "It must always take the least time",
+      "It must use no energy"
+    ],
+    "The actual path makes the action stationary: a small variation in the path produces no first-order change in the action."
+  ),
+
+  () => makeQuestion(
+    "What is action in the principle of least action?",
+    "The time integral of the system's Lagrangian",
+    [
+      "The total distance traveled divided by time",
+      "The number of particles in the system",
+      "The probability of observing a photon"
+    ],
+    "Action is calculated by integrating the system's Lagrangian over time."
+  ),
+
+  () => makeQuestion(
+    "What is the central idea of Feynman's path integral approach?",
+    "Combine quantum contributions from all possible paths",
+    [
+      "Assume a particle follows only the shortest path",
+      "Ignore every path that cannot be observed directly",
+      "Replace all particle motion with gravitational motion"
+    ],
+    "Feynman's path integral approach combines contributions from all possible paths, rather than assigning a particle just one classical path."
+  ),
+
+  () => makeQuestion(
+    "Which equation could Feynman derive using his path integral approach?",
+    "Schrödinger's equation",
+    [
+      "Newton's law of universal gravitation",
+      "Einstein's equation for mass-energy equivalence",
+      "The ideal gas equation"
+    ],
+    "Feynman's path integral formulation provides a way to derive Schrödinger's equation."
+  ),
+
+  () => makeQuestion(
+    "Which two scientists are associated with the discovery of graphene in these notes?",
+    "Andre Geim and Konstantin Novoselov",
+    [
+      "John Bardeen and Walter Brattain",
+      "Albert Einstein and Max Planck",
+      "David Deutsch and Peter Shor"
+    ],
+    "The notes credit Andre Geim and Konstantin Novoselov with the discovery of graphene."
+  ),
+
+  () => makeQuestion(
+    "What is graphene?",
+    "A one-atom-thick layer of carbon",
+    [
+      "A thick sheet of silicon",
+      "A liquid made of electrically charged particles",
+      "A metal composed entirely of photons"
+    ],
+    "Graphene is a layer of carbon just one atom thick and is known for its exceptional strength."
+  ),
+
+  () => makeQuestion(
+    "What question did David Deutsch ask about computation?",
+    "Can quantum mechanics be applied to a Turing machine?",
+    [
+      "Can a computer operate without following any rules?",
+      "Can a transistor move faster than light?",
+      "Can a classical computer eliminate quantum uncertainty?"
+    ],
+    "Deutsch explored whether the principles of quantum mechanics could be applied to the theoretical model of computation called a Turing machine."
+  ),
+
+  () => makeQuestion(
+    "What interpretation of quantum mechanics did Hugh Everett propose?",
+    "The many-worlds interpretation",
+    [
+      "The theory of relativity",
+      "The uncertainty principle",
+      "The classical wave theory of light"
+    ],
+    "Everett proposed the many-worlds interpretation, in which the wave function does not collapse and different outcomes persist in different branches."
+  ),
+
+  () => makeQuestion(
+    "According to Everett's interpretation, what happens to the wave function during a measurement?",
+    "It continues evolving without collapsing",
+    [
+      "It disappears completely",
+      "It becomes a classical particle with no quantum properties",
+      "It stops changing for the rest of time"
+    ],
+    "In Everett's interpretation, measurement does not collapse the wave function; the possible outcomes correspond to different branches."
+  ),
+
+  () => makeQuestion(
+    "Who was Hugh Everett's professor?",
+    "John Wheeler",
+    [
+      "Max Planck",
+      "Peter Shor",
+      "Walter Brattain"
+    ],
+    "John Wheeler was Everett's professor and tried to bring his ideas into discussion with Niels Bohr."
+  ),
+
+  () => makeQuestion(
+    "Which set contains the four main quantum concepts listed in these notes?",
+    "Superposition, entanglement, sum over paths, and tunneling",
+    [
+      "Gravity, friction, acceleration, and inertia",
+      "Voltage, resistance, current, and capacitance",
+      "Reflection, refraction, convection, and conduction"
+    ],
+    "The notes highlight superposition, entanglement, sum over paths, and tunneling."
+  ),
+
+  () => makeQuestion(
+    "What major possibility did Peter Shor demonstrate for quantum computing?",
+    "Efficiently factoring large integers, threatening certain widely used encryption systems",
+    [
+      "Breaking every possible encryption method without exception",
+      "Sending information faster than light",
+      "Eliminating the need for encryption keys"
+    ],
+    "Shor's algorithm showed how a sufficiently capable quantum computer could factor large integers efficiently, threatening encryption systems that rely on factoring being difficult."
+  ),
+
+  () => makeQuestion(
+    "What does it mean for a laser beam to be linearly polarized?",
+    "Its electric field oscillates along a particular direction",
+    [
+      "Its light travels at different speeds in every direction",
+      "Its photons have stopped moving",
+      "Its energy has been converted entirely into sound"
+    ],
+    "Linear polarization means that the light's electric field oscillates along a particular direction perpendicular to its direction of travel."
+  ),
+
+  () => makeQuestion(
+    "How can quantum communication reveal an attempt to intercept a key?",
+    "An eavesdropper's measurements can introduce detectable disturbances",
+    [
+      "An intercepted photon automatically sends an alarm message",
+      "The communication beam becomes visible to the naked eye",
+      "The encryption key becomes longer whenever it is copied"
+    ],
+    "Measurements made by an eavesdropper can disturb the quantum states used to distribute a key, introducing errors that the communicating parties can detect."
+  ),
+
+  () => makeQuestion(
+    "What is the main purpose of quantum key distribution?",
+    "To establish a shared encryption key using quantum states",
+    [
+      "To transmit matter through a laser beam",
+      "To make all messages public",
+      "To increase the speed of light"
+    ],
+    "Quantum key distribution uses quantum states to establish shared keys while allowing the communicating parties to check for evidence of eavesdropping."
+  ),
+
+  () => makeQuestion(
+    "What quantum resource is used in the entanglement-based form of quantum key distribution described in these notes?",
+    "Entangled qubits",
+    [
+      "Classical clockwork mechanisms",
+      "Unpolarized sound waves",
+      "Gravitational orbits"
+    ],
+    "Entanglement-based quantum key distribution uses correlations between entangled qubits to help establish a shared encryption key."
+  )
+],
 "Nuclear Physics": [
   // Nuclear structure
   () => makeQuestion(
