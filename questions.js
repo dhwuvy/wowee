@@ -1647,6 +1647,227 @@ const topicDefinitions = {
     "The chapter describes controlling currents in superconducting wires and seeking a low-energy state, rather than using the trapped-ion or photonic approaches."
   )
 ],
+"Chapter 6: The Origin of Life": [
+  () => makeQuestion(
+    "What theory did Louis Pasteur's 19th-century boiling-water experiments definitively disprove?",
+    "Spontaneous generation (the idea that life magically arises from inanimate matter)",
+    [
+      "The panspermia theory of life originating in outer space",
+      "The double-helix molecular structure of DNA",
+      "The thermodynamic laws governing organic chemical bonds"
+    ],
+    "Louis Pasteur demonstrated that boiling water creates a sterile environment, showing that life cannot spontaneously generate without existing organisms."
+  ),
+
+  () => makeQuestion(
+    "Who conducted the landmark 1952 experiment at the University of Chicago involving a flask of toxic chemicals and an electrical spark?",
+    "Stanley Miller, working under Harold Urey",
+    [
+      "Francis Crick and James Watson",
+      "Walter Gilbert and Francis Collins",
+      "Erwin Schrödinger and Rosalind Franklin"
+    ],
+    "In 1952, graduate student Stanley Miller conducted this simulation experiment under Harold Urey."
+  ),
+
+  () => makeQuestion(
+    "Which chemical mixture did Stanley Miller use in his flask to mimic the harsh atmosphere of the early Earth?",
+    "Methane, ammonia, water, and hydrogen",
+    [
+      "Oxygen, nitrogen, carbon dioxide, and helium",
+      "Sulfuric acid, carbon monoxide, neon, and argon",
+      "Sodium chloride, glucose, oxygen, and methane"
+    ],
+    "Miller used a toxic brew of methane, ammonia, water, and hydrogen, applying an electrical spark to simulate lightning or UV radiation."
+  ),
+
+  () => makeQuestion(
+    "What did Stanley Miller find inside his flask after leaving the experiment running for a week?",
+    "A red liquid containing amino acids",
+    [
+      "Pure water crystals and frozen hydrogen gas",
+      "A colony of microscopic single-celled bacteria",
+      "Unchanged methane gas with no chemical alterations"
+    ],
+    "The red coloration was caused by amino acids, the basic building blocks of proteins, forming spontaneously."
+  ),
+
+  () => makeQuestion(
+    "According to quantum mechanics, what makes carbon uniquely capable of forming the building blocks of life?",
+    "It has four electrons in its second-level orbitals, leaving room for four chemical bonds",
+    [
+      "It is the rarest element found in the periodic table of elements",
+      "Its electrons never pair up or interact with other atomic elements",
+      "It completely lacks any electrical charge distribution"
+    ],
+    "Carbon's four unpaired electrons in its second-level orbitals allow it to form four bonds and create long, complex chains of carbon, oxygen, and hydrogen."
+  ),
+
+  () => makeQuestion(
+    "How does the quantum-mechanical shape of a water molecule assist in chemical reactions for life?",
+    "It is shaped like the letter L with a 104.5-degree angle, creating an uneven electrical charge that dissolves other chemicals",
+    [
+      "It is perfectly linear, preventing any electrical charge from forming",
+      "It is completely spherical, allowing it to repel all organic molecules",
+      "It has triple covalent bonds that freeze molecules at room temperature"
+    ],
+    "Water's L-shape and 104.5-degree hydrogen angle create an uneven net electrical charge that can break weak chemical bonds and dissolve other chemicals."
+  ),
+
+  () => makeQuestion(
+    "Which physicist wrote the 1944 seminal book 'What Is Life?', arguing that life's blueprint is encoded in a molecule governed by quantum physics?",
+    "Erwin Schrödinger",
+    [
+      "Albert Einstein",
+      "Max Planck",
+      "Richard Feynman"
+    ],
+    "Erwin Schrödinger proposed that life can be explained through quantum mechanics and mathematics via a code in an unknown molecule."
+  ),
+
+  () => makeQuestion(
+    "Which scientists successfully unraveled the atomic structure of the DNA double helix?",
+    "Francis Crick and James Watson",
+    [
+      "Stanley Miller and Harold Urey",
+      "Walter Gilbert and Francis Collins",
+      "Max Planck and Albert Einstein"
+    ],
+    "Crick and Watson pieced together the double helix using X-ray crystallography data."
+  ),
+
+  () => makeQuestion(
+    "Whose X-ray crystallography photographs of DNA were crucial to Crick and Watson's discovery?",
+    "Rosalind Franklin",
+    [
+      "Jeannette M. Garcia",
+      "K. Birgitta Whaley",
+      "Pamela Silver"
+    ],
+    "Crick and Watson recognized the double-helix pattern by examining X-ray photographs taken by Rosalind Franklin."
+  ),
+
+  () => makeQuestion(
+    "What are the four nucleic acids that form the linear sequence of DNA?",
+    "A, C, T, and G",
+    [
+      "H, O, N, and C",
+      "1S, 2S, 2P, and 3P",
+      "Alpha, Beta, Gamma, and Delta"
+    ],
+    "DNA is built from four nucleic acid clusters (A, C, T, and G) intertwined in a staircase-like double helix."
+  ),
+
+  () => makeQuestion(
+    "What was Walter Gilbert's original academic background before transitioning to biotechnology and winning the Nobel Prize in Chemistry?",
+    "Theoretical elementary particle physics",
+    [
+      "Organic chemistry and botany",
+      "Inorganic geology and mineralogy",
+      "Macroeconomic theory and banking"
+    ],
+    "Gilbert started as a Harvard physics professor studying subatomic particles before switching to biology and winning the 1980 Nobel Prize in Chemistry."
+  ),
+
+  () => makeQuestion(
+    "How did Walter Gilbert calculate the initial $3 billion budget estimate for the Human Genome Project in 1986?",
+    "He estimated it would cost roughly $1 to sequence each of the 3 billion base pairs in human DNA",
+    [
+      "He multiplied the cost of building a particle accelerator by twenty",
+      "He based it on the commercial market value of synthetic insulin",
+      "He estimated the cost of manufacturing 20,000 individual proteins"
+    ],
+    "Gilbert based his controversial $3 billion estimate on 3 billion base pairs at roughly $1 per base pair."
+  ),
+
+  () => makeQuestion(
+    "What major medical breakthrough did Francis Collins achieve in 1989?",
+    "He uncovered the gene mutation responsible for cystic fibrosis",
+    [
+      "He mapped the complete atomic structure of the Covid-19 spike protein",
+      "He synthesized the first artificial chloroplast for solar power",
+      "He isolated the first prion responsible for Alzheimer's disease"
+    ],
+    "In 1989, Collins discovered that cystic fibrosis is caused by the deletion of three base pairs in DNA."
+  ),
+
+  () => makeQuestion(
+    "What is the title of the best-selling book authored by Francis Collins discussing science and religion?",
+    "The Language of God: A Scientist Presents Evidence for Belief",
+    [
+      "What Is Life? The Physical Aspect of the Living Cell",
+      "Quantum Supremacy: How the Quantum Computer Revolution Will Change Everything",
+      "The Gene Wars: Science, Politics, and the Human Genome"
+    ],
+    "Francis Collins wrote 'The Language of God' reflecting on his scientific career and religious beliefs."
+  ),
+
+  () => makeQuestion(
+    "In the chapter's framework, what characterizes 'Stage One' of biotechnology?",
+    "Mapping the genome (cataloguing genes without knowing their definitions)",
+    [
+      "Modifying and improving genes to cure incurable diseases",
+      "Determining the specific biological function of individual genes",
+      "Building commercial quantum computers to simulate protein folding"
+    ],
+    "Stage One maps the genome, Stage Two determines gene functions, and Stage Three modifies and improves the genome."
+  ),
+
+  () => makeQuestion(
+    "What is the 'panspermia theory' proposed by cosmologist Fred Hoyle to explain how DNA emerged so quickly on Earth?",
+    "Life or DNA originated in outer space and was delivered to Earth via meteorites or gas clouds",
+    [
+      "Life spontaneously generated inside boiling hydrothermal ocean vents",
+      "All biological life forms evolved from quantum fluctuations in the early sun",
+      "Simple bacteria were created directly by atmospheric lightning strikes"
+    ],
+    "Because DNA appeared within a couple hundred million years after oceans cooled, Hoyle suggested life might have come from outer space."
+  ),
+
+  () => makeQuestion(
+    "What evidence supports the possibility of material traveling between planets, such as in panspermia?",
+    "Meteorites like ALH 84001 found on Earth have been conclusively identified as originating from Mars",
+    [
+      "Fossilized dinosaur footprints discovered on the surface of the moon",
+      "Living bacteria retrieved directly from the rings of Saturn",
+      "Radio signals transmitted by ancient Martian computers"
+    ],
+    "At least 125 of the 60,000 discovered meteorites, including ALH 84001, match rocks found on Mars, proving rocks can drift between planets."
+  ),
+
+  () => makeQuestion(
+    "How does quantum mechanics help explain how life started so early despite strict thermodynamic barriers?",
+    "Path integrals and quantum tunneling allow chemical reactions to bypass high activation energy thresholds",
+    [
+      "Quantum mechanics slows down time so molecules never collide",
+      "It eliminates electrical charges from water molecules completely",
+      "It prevents organic carbon chains from ever breaking apart"
+    ],
+    "Quantum effects like path integrals and tunneling enable unlikely chemical reactions to proceed rapidly without massive external energy."
+  ),
+
+  () => makeQuestion(
+    "Why are classical digital computers inadequate for simulating larger molecules like caffeine or proteins?",
+    "The required bits grow exponentially ($10^{48}$ bits or more), quickly overwhelming classical memory",
+    [
+      "Classical computers cannot operate at room temperature",
+      "Digital microchips are too large to process carbon atoms",
+      "Silicon transistors destroy all chemical bonds instantly"
+    ],
+    "As IBM's Jeannette M. Garcia and Bob Sutor note, larger molecules quickly get out of the realm of classical simulation because of extreme computational complexity."
+  ),
+
+  () => makeQuestion(
+    "What milestone did Google's Sycamore computer achieve in computational chemistry in 2020?",
+    "It accurately simulated a chain of 12 hydrogen atoms using 12 qubits",
+    [
+      "It mapped all 350,000 known protein structures in a single second",
+      "It completely synthesized an artificial human genome from scratch",
+      "It broke all 128-bit encryption codes using quantum superposition"
+    ],
+    "Led by researchers like Ryan Babbush, Sycamore simulated 12 hydrogen atoms with 12 qubits, doubling prior simulation limits."
+  )
+],
 "Nuclear Physics": [
   // Nuclear structure
   () => makeQuestion(
