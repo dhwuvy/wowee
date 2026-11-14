@@ -1360,6 +1360,293 @@ const topicDefinitions = {
     "Entanglement-based quantum key distribution uses correlations between entangled qubits to help establish a shared encryption key."
   )
 ],
+"Chapter 5: The Race is On": [
+  () => makeQuestion(
+    "According to the chapter, which company developed a 433-qubit quantum computer?",
+    "IBM",
+    [
+      "Google",
+      "Honeywell",
+      "Microsoft"
+    ],
+    "The chapter identifies IBM as the developer of a 433-qubit quantum computer; this figure reflects the chapter's account rather than a current ranking."
+  ),
+
+  () => makeQuestion(
+    "What long-term qubit target does the chapter describe?",
+    "One million qubits",
+    [
+      "One hundred thousand qubits",
+      "Ten million qubits",
+      "One billion qubits"
+    ],
+    "The chapter describes a goal of reaching one million qubits."
+  ),
+
+  () => makeQuestion(
+    "Why are superconducting quantum computers cooled to temperatures near absolute zero?",
+    "To support superconductivity and reduce disturbances to quantum states",
+    [
+      "To turn electrical signals into polarized photons",
+      "To hold charged atoms in fixed positions",
+      "To increase the resistance of their circuits"
+    ],
+    "Extremely low temperatures support superconducting circuits and help protect the quantum states needed for computation."
+  ),
+
+  () => makeQuestion(
+    "What does coherence time describe?",
+    "How long a system preserves its quantum coherence",
+    [
+      "How long a cooling system takes to reach operating temperature",
+      "How long a processor takes to complete an entire algorithm",
+      "How long a laser pulse takes to travel between qubits"
+    ],
+    "Coherence time measures how long quantum coherence persists before disturbances degrade it."
+  ),
+
+  () => makeQuestion(
+    "Which difficulty does the chapter emphasize for superconducting quantum computers?",
+    "Maintaining extremely cold, carefully isolated operating conditions",
+    [
+      "Producing enough light to connect distant beam splitters",
+      "Keeping individual ions suspended without collisions",
+      "Manufacturing silicon that cannot transmit infrared light"
+    ],
+    "The chapter emphasizes the complex cooling and environmental isolation needed to preserve coherence."
+  ),
+
+  () => makeQuestion(
+    "What is the purpose of using redundant physical qubits in quantum error correction?",
+    "To protect logical quantum information against errors",
+    [
+      "To eliminate the need for low-temperature operation",
+      "To make every physical qubit perform a separate algorithm",
+      "To replace entanglement with ordinary electrical signals"
+    ],
+    "Redundant physical qubits help encode and protect logical quantum information rather than simply serving as independent computational units."
+  ),
+
+  () => makeQuestion(
+    "What possible error-correction overhead does the chapter mention?",
+    "As many as 1,000 physical qubits for one logical qubit",
+    [
+      "As many as 1,000 logical qubits for one physical qubit",
+      "One additional physical qubit for every 1,000 logical qubits",
+      "Exactly 1,000 physical qubits for every complete processor"
+    ],
+    "The chapter suggests that protecting one logical qubit could require as many as 1,000 physical qubits; it presents this as a possible overhead, not a universal fixed ratio."
+  ),
+
+  () => makeQuestion(
+    "What development timeline does the chapter attribute to Google?",
+    "A million-qubit processor might be attainable within ten years",
+    [
+      "A million-qubit processor might be attainable within two years",
+      "A hundred-million-qubit processor might be attainable within ten years",
+      "A thousand-qubit processor might be attainable within twenty years"
+    ],
+    "The chapter reports a ten-year estimate for a million-qubit processor; this is the estimate presented in the text, not a new forecast."
+  ),
+
+  () => makeQuestion(
+    "What serves as the quantum information carrier in an ion-trap quantum computer?",
+    "Trapped ions",
+    [
+      "Photons moving through optical circuits",
+      "Currents in superconducting circuits",
+      "Protected states in semiconductor nanowires"
+    ],
+    "Ion-trap quantum computers encode quantum information in the states of trapped ions."
+  ),
+
+  () => makeQuestion(
+    "How does the chapter describe changing the states of trapped-ion qubits?",
+    "Applying microwave signals or laser beams",
+    [
+      "Passing infrared light through a chain of beam splitters",
+      "Etching new pathways into a silicon wafer",
+      "Changing the topology of an indium antimonide nanowire"
+    ],
+    "Microwave signals or laser beams can drive transitions between the states used to encode trapped-ion qubits."
+  ),
+
+  () => makeQuestion(
+    "What trade-off does the chapter associate with ion-trap quantum computers?",
+    "Longer coherence times but difficulty scaling up",
+    [
+      "Shorter coherence times but no need for precise control",
+      "Easier scaling but a requirement for optical beam splitters",
+      "Room-temperature operation but no ability to entangle qubits"
+    ],
+    "The chapter presents long coherence times as an advantage of trapped ions and scaling as a major challenge."
+  ),
+
+  () => makeQuestion(
+    "Which company does the chapter associate with leadership in ion-trap quantum computing?",
+    "Honeywell",
+    [
+      "Xanadu",
+      "PsiQuantum",
+      "D-Wave"
+    ],
+    "The chapter identifies Honeywell with the ion-trap approach."
+  ),
+
+  () => makeQuestion(
+    "Which country does the chapter highlight for a major photonic quantum computing demonstration?",
+    "China",
+    [
+      "Canada",
+      "The Netherlands",
+      "The United States"
+    ],
+    "The chapter highlights a Chinese photonic quantum computing demonstration."
+  ),
+
+  () => makeQuestion(
+    "What performance comparison does the chapter report for the Chinese photonic demonstration?",
+    "About 200 seconds versus an estimated half-billion years on a classical computer",
+    [
+      "About 200 minutes versus an estimated half-billion years on a classical computer",
+      "About 200 seconds versus an estimated half-million years on a classical computer",
+      "About 2,000 seconds versus an estimated five billion years on a classical computer"
+    ],
+    "The chapter reports approximately 200 seconds for a particular task, compared with an estimated half-billion years using classical computation; this is not a claim about every computational problem."
+  ),
+
+  () => makeQuestion(
+    "What property of light is described by its polarization?",
+    "The orientation of its electric-field oscillations",
+    [
+      "The spacing between successive wave crests",
+      "The number of photons emitted each second",
+      "The phase difference between separate laser pulses"
+    ],
+    "Polarization describes the orientation of the electric field's oscillations, rather than the light's wavelength, intensity, or relative phase."
+  ),
+
+  () => makeQuestion(
+    "What role does a beam splitter play in the photonic setup described?",
+    "It directs light into transmitted and reflected paths",
+    [
+      "It converts light into the electrical current of a superconducting qubit",
+      "It traps charged atoms at fixed positions",
+      "It removes all but one wavelength from a laser beam"
+    ],
+    "A beam splitter divides incoming light between transmitted and reflected paths; the chapter describes an approximately equal split."
+  ),
+
+  () => makeQuestion(
+    "How does the chapter describe Xanadu's photonic chip?",
+    "It guides infrared light through a microscopic network of beam splitters",
+    [
+      "It controls trapped ions using a microscopic network of electrodes",
+      "It manipulates superconducting currents through magnetic fields",
+      "It stores quantum information in indium antimonide nanowires"
+    ],
+    "The chapter describes Xanadu's chip as manipulating infrared light through a microscopic network of beam splitters."
+  ),
+
+  () => makeQuestion(
+    "Which limitation does the chapter attribute to the Xanadu system it describes?",
+    "It had only eight qubits and still required supercooling",
+    [
+      "It had 433 qubits but could not manipulate infrared light",
+      "It had 5,600 qubits but could perform only quantum annealing",
+      "It had one million qubits but required trapped ions"
+    ],
+    "The chapter describes an eight-qubit Xanadu system that still required supercooling; these details refer to the system discussed in the text."
+  ),
+
+  () => makeQuestion(
+    "Which company does the chapter associate with silicon photonic quantum computing?",
+    "PsiQuantum",
+    [
+      "Honeywell",
+      "D-Wave",
+      "Microsoft"
+    ],
+    "The chapter associates PsiQuantum with silicon photonic quantum computing."
+  ),
+
+  () => makeQuestion(
+    "Why is silicon useful for the photonic approach described in the chapter?",
+    "It supports established electronic fabrication and can guide suitable wavelengths of light",
+    [
+      "It naturally traps ions and eliminates the need for control fields",
+      "It remains superconducting at ordinary room temperature",
+      "It prevents photons from interacting with any surrounding material"
+    ],
+    "The chapter emphasizes silicon's connection to transistor fabrication and its usefulness in transmitting light in photonic circuits."
+  ),
+
+  () => makeQuestion(
+    "Which company does the chapter associate with topological quantum computing?",
+    "Microsoft",
+    [
+      "Xanadu",
+      "Honeywell",
+      "D-Wave"
+    ],
+    "The chapter identifies Microsoft with the topological approach to quantum computing."
+  ),
+
+  () => makeQuestion(
+    "What material featured in the Delft research discussed in the chapter?",
+    "Indium antimonide nanowires",
+    [
+      "Silicon photonic waveguides",
+      "Superconducting wire loops",
+      "Trapped-ion chains"
+    ],
+    "The chapter discusses Delft research involving indium antimonide nanowires."
+  ),
+
+  () => makeQuestion(
+    "What happened to the Delft research paper discussed in the chapter?",
+    "It was withdrawn after its findings were challenged",
+    [
+      "It became the basis of the 433-qubit IBM processor",
+      "It was expanded into a commercial trapped-ion computer",
+      "It established that all quantum computers can operate at room temperature"
+    ],
+    "The chapter states that the paper's findings were challenged and the paper was subsequently withdrawn."
+  ),
+
+  () => makeQuestion(
+    "What qubit count and future target does the chapter attribute to D-Wave?",
+    "About 5,600 qubits, with a goal above 7,000",
+    [
+      "About 433 qubits, with a goal above 1,000",
+      "About 1,000 qubits, with a goal above 5,600",
+      "About 7,000 qubits, with a goal above one million"
+    ],
+    "The chapter reports a D-Wave claim of roughly 5,600 qubits and a target exceeding 7,000; these are figures from the chapter, not a current product update."
+  ),
+
+  () => makeQuestion(
+    "What price range does the chapter give for D-Wave computers?",
+    "$10 million to $15 million",
+    [
+      "$1 million to $5 million",
+      "$20 million to $25 million",
+      "$50 million to $100 million"
+    ],
+    "The chapter gives a commercial price range of $10 million to $15 million."
+  ),
+
+  () => makeQuestion(
+    "How does the chapter describe D-Wave's computational approach?",
+    "Manipulating superconducting currents so the system moves toward a low-energy state",
+    [
+      "Guiding infrared photons through a network of beam splitters",
+      "Applying laser pulses to ions held in electromagnetic traps",
+      "Encoding information in the topology of semiconductor nanowires"
+    ],
+    "The chapter describes controlling currents in superconducting wires and seeking a low-energy state, rather than using the trapped-ion or photonic approaches."
+  )
+],
 "Nuclear Physics": [
   // Nuclear structure
   () => makeQuestion(
